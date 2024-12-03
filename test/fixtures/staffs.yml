@@ -2,18 +2,22 @@
 
 one:
   name: MyString
+  email: MyString
+  password: MyString
   gender: 1
-  birthday: 2024-12-02
+  birthday: 2024-12-03
   hometown: MyString
   blood_group: 1
-  designation: MyString
-  integer: MyString
+  designation: 1
+  role: 1
 
 two:
   name: MyString
+  email: MyString
+  password: MyString
   gender: 1
-  birthday: 2024-12-02
+  birthday: 2024-12-03
   hometown: MyString
   blood_group: 1
-  designation: MyString
-  integer: MyString
+  designation: 1
+  role: 1

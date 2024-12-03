@@ -17,10 +17,12 @@ class StaffsTest < ApplicationSystemTestCase
     fill_in "Birthday", with: @staff.birthday
     fill_in "Blood group", with: @staff.blood_group
     fill_in "Designation", with: @staff.designation
+    fill_in "Email", with: @staff.email
     fill_in "Gender", with: @staff.gender
     fill_in "Hometown", with: @staff.hometown
-    fill_in "Integer", with: @staff.integer
     fill_in "Name", with: @staff.name
+    fill_in "Password", with: @staff.password
+    fill_in "Role", with: @staff.role
     click_on "Create Staff"
 
     assert_text "Staff was successfully created"
@@ -34,10 +36,12 @@ class StaffsTest < ApplicationSystemTestCase
     fill_in "Birthday", with: @staff.birthday
     fill_in "Blood group", with: @staff.blood_group
     fill_in "Designation", with: @staff.designation
+    fill_in "Email", with: @staff.email
     fill_in "Gender", with: @staff.gender
     fill_in "Hometown", with: @staff.hometown
-    fill_in "Integer", with: @staff.integer
     fill_in "Name", with: @staff.name
+    fill_in "Password", with: @staff.password
+    fill_in "Role", with: @staff.role
     click_on "Update Staff"
 
     assert_text "Staff was successfully updated"

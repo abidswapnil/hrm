@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  authority: 1
+  total_number: 1
 
 two:
   name: MyString
-  authority: 1
+  total_number: 1

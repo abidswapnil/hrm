@@ -17,7 +17,7 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create staff" do
     assert_difference("Staff.count") do
-      post staffs_url, params: { staff: { birthday: @staff.birthday, blood_group: @staff.blood_group, designation: @staff.designation, gender: @staff.gender, hometown: @staff.hometown, integer: @staff.integer, name: @staff.name } }
+      post staffs_url, params: { staff: { birthday: @staff.birthday, blood_group: @staff.blood_group, designation: @staff.designation, email: @staff.email, gender: @staff.gender, hometown: @staff.hometown, name: @staff.name, password: @staff.password, role: @staff.role } }
     end
 
     assert_redirected_to staff_url(Staff.last)
@@ -34,7 +34,7 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update staff" do
-    patch staff_url(@staff), params: { staff: { birthday: @staff.birthday, blood_group: @staff.blood_group, designation: @staff.designation, gender: @staff.gender, hometown: @staff.hometown, integer: @staff.integer, name: @staff.name } }
+    patch staff_url(@staff), params: { staff: { birthday: @staff.birthday, blood_group: @staff.blood_group, designation: @staff.designation, email: @staff.email, gender: @staff.gender, hometown: @staff.hometown, name: @staff.name, password: @staff.password, role: @staff.role } }
     assert_redirected_to staff_url(@staff)
   end
 

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :staffs
+  get "roles/index"
+  get "roles/new"
+  get "roles/create"
   resources :offices
 
   get "up" => "rails/health#show", as: :rails_health_check
