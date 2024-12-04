@@ -6,16 +6,43 @@
   <% content_for :title, "Staffs" %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Staffs</h1>
+    <h1 class="font-semibold text-4xl">Staffs</h1>
     <%= link_to "New staff", new_staff_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="staffs" class="min-w-full">
-    <% @staffs.each do |staff| %>
-      <%= render staff %>
-      <p>
-        <%= link_to "Show this staff", staff, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-3">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Email</th>
+            <th scope="col" class="px-6 py-3">Gender</th>
+            <th scope="col" class="px-6 py-3">Birth date</th>
+            <th scope="col" class="px-6 py-3">Hometown</th>
+            <th scope="col" class="px-6 py-3">Blood group</th>
+            <th scope="col" class="px-6 py-3">Designation</th>
+            <th scope="col" class="px-6 py-3">Role</th>
+            <th scope="col" class="px-6 py-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+         <% @staffs.each do |staff| %>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td class="px-6 py-4"><%= staff.name %></td>
+              <td class="px-6 py-4"><%= staff.email %></td>
+              <td class="px-6 py-4"><%= staff.gender %></td>
+              <td class="px-6 py-4"><%= staff.birthday %></td>
+              <td class="px-6 py-4"><%= staff.hometown %></td>
+              <td class="px-6 py-4"><%= staff.blood_group %></td>
+              <td class="px-6 py-4"><%= staff.designation %></td>
+              <td class="px-6 py-4"><%= staff.role %></td>
+              <td class="px-6 py-4"><%= link_to "Show this staff", staff, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+              </td>
+            </tr>
+         <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

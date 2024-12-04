@@ -1,7 +1,6 @@
 class Staff < ApplicationRecord
   validates :password, confirmation: true
-  validates :password_confirmation, presence: true
-  validates :name, :gender, :birthday, :hometown, :blood_group, :designation, :role, presence: true
+  validates :name, :gender, :password_confirmation, :birthday, :hometown, :blood_group, :designation, :role, presence: true
   validates :email, uniqueness: true
 
   has_secure_password
