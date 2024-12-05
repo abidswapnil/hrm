@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  get "admin", to: "admin#index"
+
   resources :staffs
-  get "roles/index"
-  get "roles/new"
-  get "roles/create"
+  resources :roles
   resources :offices
 
   get "up" => "rails/health#show", as: :rails_health_check
@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "session#new"
+  root "admin#index"
 end

@@ -33,16 +33,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-<!--  <section class="flex">-->
-<!--    <nav class="bg-green-900 p-6">-->
-<!--      <ul class="text-gray-300 leading-8">-->
-<!--        <li><a href="/">Home</a></li>-->
-<!--        <li><a href="/question">Questions</a></li>-->
-<!--        <li><a href="/news">News</a></li>-->
-<!--        <li><a href="/contact">Contact</a></li>-->
-<!--      </ul>-->
-<!--    </nav>-->
-    <main class="container mx-auto mt-4 px-5 flex">
+  <section class="">
+    <%= render '/layouts/navbar' if session[:staff_id] %>
+    <main class="container mx-auto mt-4 px-5 flex"
       <%= yield %>
     </main>
   </section>
