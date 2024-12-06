@@ -4,11 +4,17 @@
 <!--</div>-->
 
 <div class="flex justify-center items-center space-x-4">
-  <div class="w-48 h-24 bg-gray-800 sm:rounded-lg text-white py-4 font-semibold justify-center">
+  <div class="w-48 h-24 bg-gray-800 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
     <div>Offices</div>
     <div><%= Office.count %></div>
   </div>
-  <div class="w-48 h-24 bg-green-500 sm:rounded-lg">box 2</div>
-  <div class="w-48 h-24 bg-blue-500 sm:rounded-lg">box 3</div>
+  <div class="w-48 h-24 bg-green-500 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
+    <div>Staff</div>
+    <div><%= Staff.count %></div>
+  </div>
+  <div class="w-48 h-24 bg-red-500 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
+    <div>Role</div>
+    <div><%= Role.count %></div>
+  </div>
 </div>
 
