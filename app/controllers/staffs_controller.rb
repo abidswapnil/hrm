@@ -13,8 +13,12 @@ class StaffsController < ApplicationController
 
   # GET /staffs/new
   def new
-    @staff = Staff.new
-  end
+    if Staff.exists? and session[:staff_id].nil?
+      redirect_to root_path
+    else
+      @staff = Staff.new
+    end
+   end
 
   # GET /staffs/1/edit
   def edit

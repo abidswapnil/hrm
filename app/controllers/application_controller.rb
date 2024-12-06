@@ -10,10 +10,11 @@ class ApplicationController < ActionController::Base
 
   protected
   def authorize
-    puts "****** #{session[:staff_id] ? session[:staff_id] : 'nil'} ********"
     unless session[:staff_id]
       redirect_to login_url
     end
   end
+
+  # def
 
 end
