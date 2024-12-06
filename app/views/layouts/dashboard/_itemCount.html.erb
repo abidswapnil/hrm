@@ -1,0 +1,14 @@
+<div class="flex items-center space-x-4 mb-5">
+  <a href="/offices" class="w-48 h-24 bg-gray-800 sm:rounded-lg text-white py-6 font-semibold text-center justify-center">
+    <div>Total office</div>
+    <div><%= Office.count %></div>
+  </a>
+  <a href="/staffs" class="w-48 h-24 bg-green-500 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
+    <div>Total staff</div>
+    <div><%= Staff.count %></div>
+  </a>
+  <a href="/roles" class="w-48 h-24 bg-red-500 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
+    <div>Total role</div>
+    <div><%= Role.count %></div>
+  </a>
+</div>

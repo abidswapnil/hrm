@@ -3,18 +3,7 @@
 <!--  <p>Find me in app/views/admin/index.html.erb</p>-->
 <!--</div>-->
 
-<div class="flex justify-center items-center space-x-4">
-  <div class="w-48 h-24 bg-gray-800 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
-    <div>Offices</div>
-    <div><%= Office.count %></div>
-  </div>
-  <div class="w-48 h-24 bg-green-500 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
-    <div>Staff</div>
-    <div><%= Staff.count %></div>
-  </div>
-  <div class="w-48 h-24 bg-red-500 sm:rounded-lg text-white py-4 font-semibold text-center justify-center">
-    <div>Role</div>
-    <div><%= Role.count %></div>
-  </div>
+<div class="items-center mb-5">
+  <%= render 'layouts/dashboard/itemCount' %>
 </div>
 
