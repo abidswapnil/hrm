@@ -53,7 +53,7 @@ class OfficesController < ApplicationController
     @office.destroy!
 
     respond_to do |format|
-      format.html { redirect_to offices_path, status: :see_other, notice: "Office was successfully destroyed." }
+      format.html { redirect_to offices_path, status: :see_other, alert: "Office was successfully destroyed!" }
       format.json { head :no_content }
     end
   end

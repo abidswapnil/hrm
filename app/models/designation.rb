@@ -1,3 +1,3 @@
 class Designation < ApplicationRecord
-  belongs_to :staff
+  # belongs_to :staff
 end

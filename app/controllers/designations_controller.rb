@@ -52,7 +52,7 @@ class DesignationsController < ApplicationController
     @designation.destroy!
 
     respond_to do |format|
-      format.html { redirect_to designations_path, status: :see_other, notice: "Designation was successfully destroyed." }
+      format.html { redirect_to designations_path, status: :see_other, alert: "Designation was successfully destroyed!" }
       format.json { head :no_content }
     end
   end

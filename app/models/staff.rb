@@ -10,17 +10,14 @@ class Staff < ApplicationRecord
     male: 0, female: 1
   }
   enum role: {
-    'Admin': 0,'Super admin': 1
+    'Admin': 0, 'Super admin': 1
   }
   enum blood_group: {
     'A+':0, 'B+':1
   }
   # enum designation: {
-  #   # 'admin': 0, 'super admin': 1
+  #   'admin': 0, 'super admin': 1
   # }
 
-  designation = Designation.all
-  enum designation: designation.each_with_index.map { |d, index| [d.name, index] }.to_h
-
-
+  enum designation: Designation.all.each_with_index.map { |d, index| [d.name, index] }.to_h if Designation.any?
 end
