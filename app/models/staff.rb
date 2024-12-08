@@ -2,6 +2,7 @@ class Staff < ApplicationRecord
   validates :password, confirmation: true
   validates :name, :gender, :password_confirmation, :birthday, :hometown, :blood_group, :designation, :role, presence: true
   validates :email, uniqueness: true
+  has_many :designations
 
   has_secure_password
 
@@ -14,7 +15,12 @@ class Staff < ApplicationRecord
   enum blood_group: {
     'A+':0, 'B+':1
   }
-  enum designation: {
-    'admin': 0, 'super admin': 1
-  }
+  # enum designation: {
+  #   # 'admin': 0, 'super admin': 1
+  # }
+
+  designation = Designation.all
+  enum designation: designation.each_with_index.map { |d, index| [d.name, index] }.to_h
+
+
 end
