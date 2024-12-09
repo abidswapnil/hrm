@@ -25,7 +25,7 @@ class DesignationsController < ApplicationController
 
     respond_to do |format|
       if @designation.save
-        format.html { redirect_to @designation, notice: "Designation was successfully created." }
+        format.html { redirect_to designations_path, notice: "Designation '#{@designation.name}' was successfully created." }
         format.json { render :show, status: :created, location: @designation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class DesignationsController < ApplicationController
   def update
     respond_to do |format|
       if @designation.update(designation_params)
-        format.html { redirect_to @designation, notice: "Designation was successfully updated." }
+        format.html { redirect_to @designation, notice: "Designation #{@designation.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @designation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class DesignationsController < ApplicationController
     @designation.destroy!
 
     respond_to do |format|
-      format.html { redirect_to designations_path, status: :see_other, alert: "Designation was successfully destroyed!" }
+      format.html { redirect_to designations_path, status: :see_other, alert: "Designation '#{@designation.name}' was destroyed!" }
       format.json { head :no_content }
     end
   end

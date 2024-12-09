@@ -53,7 +53,7 @@
 
   <div class="my-5">
     <%= form.label :designation %>
-    <%= form.select :designation, Staff.designations.keys, { prompt: "Select an option" }, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :designation, Designation.all.each.map { |d| [d.name, d.id] }.to_h, { prompt: "Select an option" }, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">

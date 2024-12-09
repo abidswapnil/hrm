@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :designations
+
   get "admin", to: "admin#index"
 
+  resources :designations
   resources :staffs
   resources :roles
   resources :offices
