@@ -28,10 +28,10 @@ class HrmOffice < Grape::API
   desc "Create a Office"
   params do
     requires :name, type: String, desc: "Office Name"
-    requires :category, type: String, desc: "Office category"
-    requires :division, type: String, desc: "Office Password"
-    requires :district, type: String, desc: "Office Password Confirmation"
-    requires :address, type: String, desc: "Office Gender"
+    requires :category, type: String, desc: "Office Category"
+    requires :division, type: String, desc: "Office Division"
+    requires :district, type: String, desc: "Office District"
+    requires :address, type: String, desc: "Office Address"
   end
   resource :office do
     post do
@@ -43,13 +43,13 @@ class HrmOffice < Grape::API
   desc "Update office"
   params do
     requires :id, type: Integer, desc: "Office ID"
-    requires :division, type: String, desc: "Office name"
+    requires :name, type: String, desc: "Office Name"
   end
-  resource :office do
+  resource :offices do
     route_param :id do
       patch do
-        Office.find(params[:id]).update(division: params[:division])
-        # {message: "Office updated successfully."}
+        Office.find(params[:id]).update(name: params[:name])
+        {message: "Office updated successfully."}
       end
     end
   end
@@ -57,12 +57,12 @@ class HrmOffice < Grape::API
   desc "Update a Office"
   params do
     requires :name, type: String, desc: "Office Name"
-    requires :category, type: Integer, desc: "Office category"
+    requires :category, type: Integer, desc: "Office Category"
     requires :division, type: Integer, desc: "Office Division"
     requires :district, type: Integer, desc: "Office District"
-    requires :address, type: String, desc: "Office address"
+    requires :address, type: String, desc: "Office Address"
   end
-  resource :office do
+  resource :offices do
     route_param :id do
       put do
         Office.find(params[:id]).
@@ -72,7 +72,7 @@ class HrmOffice < Grape::API
                    district: params[:district],
                    address: params[:address],
                  })
-        # {message: "Office updated successfully."}
+        {message: "Office updated successfully."}
       end
     end
   end

@@ -52,11 +52,11 @@ class HrmStaff < Grape::API
     requires :password, type: String, desc: "Staff Password"
     requires :password_confirmation, type: String, desc: "Staff Password Confirmation"
   end
-  resource :staff do
+  resource :staffs do
     route_param :id do
       patch do
         Staff.find(params[:id]).update(name: params[:name], password: params[:password], password_confirmation: params[:password_confirmation])
-        # {message: "Staff updated successfully."}
+        {message: "Staff updated successfully."}
       end
     end
   end
@@ -74,22 +74,12 @@ class HrmStaff < Grape::API
     requires :designation, type: String, desc: "Staff Designation"
     requires :role, type: String, desc: "Staff Roles"
   end
-  resource :staff do
+  resource :staffs do
     route_param :id do
       put do
         Staff.find(params[:id]).
-          update({ name: params[:name],
-                   email: params[:email],
-                   password: params[:password],
-                   password_confirmation: params[:password_confirmation],
-                   gender: params[:gender],
-                   birthday: params[:birthday],
-                   hometown: params[:hometown],
-                   blood_group: params[:blood_group],
-                   designation: params[:designation],
-                   role: params[:role]
-                   })
-        # {message: "Staff updated successfully."}
+          update(params)
+        {message: "Staff updated successfully."}
       end
     end
   end
