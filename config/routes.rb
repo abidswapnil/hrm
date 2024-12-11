@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Base => "/"
 
   get "admin", to: "admin#index"
 
@@ -10,9 +11,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   controller :session do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
+    get "login" => :new
+    post "login" => :create
+    delete "logout" => :destroy
   end
 
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "admin#index"
+
 end

@@ -16,7 +16,7 @@
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-3">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
         <th scope="col" class="px-6 py-3">#</th>
         <th scope="col" class="px-6 py-3">id</th>
         <th scope="col" class="px-6 py-3">Name</th>
@@ -25,10 +25,10 @@
       </thead>
       <tbody>
       <% @designations.each_with_index do |designation, index| %>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <tr class="bg-white border-b text-gray-900">
           <td class="px-6 py-2.5"><%= index+1 %></td>
           <td class="px-6 py-2.5"><%= designation.id %></td>
-          <td class="px-6 py-2.5"><%= designation.name %></td>
+          <td class="px-6 py-2.5"><a href="<%= designation_path(designation.id) %>"><%= designation.name %></a></td>
           <td class="flex px-6 py-2.5 space-x-4">
             <%= link_to designation do %>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="cyan" class="size-6">

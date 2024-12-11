@@ -4,12 +4,17 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @staff %>
+    <div class="grid grid-cols-2 gap-4 mt-10">
+      <% @staff.attributes.each do |column, value| %>
+        <div class="font-medium text-gray-600"><%= column.humanize %></div>
+        <div class="text-gray-800"><%= value %></div>
+      <% end %>
+    </div>
 
-    <%#= link_to "Edit this staff", edit_staff_path(@staff), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to staffs", staffs_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-<!--    <div class="inline-block ml-2">-->
-      <%#= button_to "Destroy this staff", @staff, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-<!--    </div>-->
+    <%= link_to staff_path, class: "rounded-lg mt-4 p-2 bg-gray-100 hover:bg-gray-200 inline-block text-gray-800 border border-gray-300 shadow-sm" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+      </svg>
+    <% end %>
   </div>
 </div>

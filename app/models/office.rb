@@ -1,4 +1,6 @@
 class Office < ApplicationRecord
+  validates :name, :category, :division, :district, :address, presence: true
+
   enum category: {
     head: 0,
     zonal: 1,

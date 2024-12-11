@@ -6,10 +6,17 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module Hrm
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+
+    # config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    # config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+
     config.load_defaults 7.2
+    # config.autoloader = :classic
+
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
